@@ -19,7 +19,38 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
-body { font-size: 12px; font-family: Arial, sans-serif; line-height: 1.4; }
+body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1.2; }
+
+.main { background-image: url(../img/bg.jpg); background-size: cover; }
+.main .main__center { position: relative; width: 960px; height: 100vh; margin: 0 auto; text-align: center; font-size: 0; }
+.main .main__center:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
+.main .main__phone { display: inline-block; width: 942px; height: 623px; background: url(../img/main-phone.png); vertical-align: middle; }
+.main .main__head { position: absolute; top: 80px; left: 0; right: 0; text-align: left; }
+.main .main__title { font-family: "Hammersmith One", Arial, sans-serif; font-size: 92px; color: white; }
+.main .main__title-sub { margin-bottom: 20px; font-size: 16px; color: #7ccd2f; }
+
+.social { font-size: 0; }
+.social a { display: inline-block; margin-right: 20px; vertical-align: top; }
+.social a.social__fb { background: url('../img/icons-sb92f54e1b0.png') 0 -142px no-repeat; width: 32px; height: 32px; }
+.social a.social__tw { background: url('../img/icons-sb92f54e1b0.png') 0 -70px no-repeat; width: 32px; height: 32px; }
+
+.appstore { position: absolute; right: 0; bottom: 200px; background: url('../img/icons-sb92f54e1b0.png') 0 0 no-repeat; width: 200px; height: 60px; }
+
+.gallery { position: relative; height: 100vh; }
+.gallery .gallery__green { position: absolute; left: 0; right: 0; bottom: 0; padding: 150px 0 310px; background: url(../img/gallery-bg.jpg); }
+.gallery .gallery__list-item { width: 160px; height: 160px; border: 1px solid white; border-width: 1px 0 1px 1px; font-size: 0; }
+.gallery .gallery__phone { position: absolute; left: 50%; bottom: 75px; width: 400px; height: 798px; margin-left: -200px; background: url(../img/gallery-phone.png); font-size: 0; z-index: 200; }
+.gallery .gallery__phone-list { position: absolute; top: 116px; left: 42px; width: 317px; height: 565px; background: white; }
+.gallery .gallery__counter { position: absolute; top: 70px; font-size: 26px; color: #4a4a4a; text-transform: uppercase; text-align: center; z-index: 210; }
+.gallery .gallery__counter-item { width: 200px; }
+.gallery .gallery__counter-item span { position: relative; display: block; margin-bottom: 7px; font-size: 66px; color: #7ccd2f; }
+.gallery .gallery__counter-item span:after { content: ""; position: absolute; bottom: -1px; left: 50%; width: 100px; height: 1px; margin-left: -50px; background: black; }
+.gallery .gallery__counter_users { left: 50%; margin-left: -480px; }
+.gallery .gallery__counter_deals { right: 50%; margin-right: -490px; }
+.gallery .gallery__pager { position: absolute; left: 50%; bottom: 25px; width: 300px; margin-left: -150px; text-align: center; font-size: 0; z-index: 200; }
+.gallery .gallery__pager button { width: 24px; height: 24px; margin-left: 20px; border: 6px solid rgba(255, 255, 255, 0.5); border-radius: 50%; background: none; vertical-align: top; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
+.gallery .gallery__pager button:first-child { margin: 0; }
+.gallery .gallery__pager button.is-active { background: rgba(255, 255, 255, 0.5); border-color: transparent; }
 
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
