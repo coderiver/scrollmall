@@ -42,6 +42,10 @@
 =fu
 	font-family: "Ubuntu", Arial, sans-serif 
 	
+@mixin rt
+	@media only screen and (max-width: "980px")
+		@content
+	
 body
 	+fu
 	font-size: 12px 
@@ -56,12 +60,23 @@ body
 		background-size: cover
 
 .l-center
-	width: 960px
+	max-width: 960px
 	margin: 0 auto
+	+rt
+		width: auto
 	
 .header
 	padding: 70px 0 50px
 	+clr
+	+rt
+		padding: 20px 10px
+	.download
+		display: none
+		padding: 0
+		margin-bottom: 20px
+		text-align: left
+		+rt
+			display: block
 	.header__logo
 		float: right
 		height: 55px
@@ -69,8 +84,12 @@ body
 		+fh
 		font-size: 56px
 		color: #FFF 
-	.appstore
+		+rt
+			display: none
+	>.appstore
 		float: right
+		+rt
+			display: none
 
 .user
 	float: left
@@ -101,35 +120,61 @@ body
 	background-size: cover 
 	.main__center
 		position: relative
-		width: 960px
+		max-width: 960px
 		height: 100vh
 		min-height: 940px
 		margin: 0 auto
 		+vertical
+		+rt
+			width: auto
+			height: auto
+			min-height: 0
+			padding-bottom: 147px
+			text-align: center
+		>.appstore
+			position: absolute
+			right: 0
+			bottom: 200px
+			+rt
+				display: none
 	.main__phone
-		display: inline-block
-		width: 942px
-		height: 623px
-		background: url(../img/main-phone.png) 
+		position: absolute
+		top: 50%
+		margin-top: -312px
+		padding: 0 10px
 		vertical-align: middle
+		+rt
+			position: relative
+			top: auto
+			margin: 0 0 20px
+		img
+			max-width: 100%
 	.main__head
 		position: absolute
 		top: 80px
 		left: 0
 		right: 0 
 		text-align: left
+		.appstore
+			display: none
+			margin-bottom: 20px
+			+rt
+				display: inline-block
+		+rt
+			position: relative
+			top: auto
+			padding-top: 15px
+			text-align: center
 	.main__logo
 		+fh
 		font-size: 92px
 		color: #FFF  
+		+rt
+			font-size: 64px
 	.main__title-sub
 		margin-bottom: 20px
 		font-size: 16px
 		color: #7CCD2F
-	.appstore
-		position: absolute
-		right: 0
-		bottom: 200px
 
 .social
 	font-size: 0
@@ -151,6 +196,11 @@ body
 	position: relative
 	height: 100vh
 	min-height: 940px
+	+rt
+		height: auto
+		min-height: 0
+		margin-top: -127px
+		font-size: 0
 	.gallery__green
 		position: absolute
 		left: 0
@@ -158,6 +208,10 @@ body
 		bottom: 0
 		padding: 150px 0 310px
 		background: url(../img/gallery-bg.jpg)
+		+rt
+			position: relative
+			bottom: auto
+			padding: 0
 	.gallery__list-item
 		width: 160px
 		height: 160px
@@ -174,6 +228,8 @@ body
 		background: url(../img/gallery-phone.png)
 		font-size: 0 
 		z-index: 200
+		+rt
+			display: none
 	.gallery__phone-list
 		position: absolute
 		top: 116px
@@ -189,14 +245,27 @@ body
 		text-transform: uppercase
 		text-align: center
 		z-index: 210 
+		+rt
+			position: relative
+			top: auto
+			display: inline-block
+			width: 50%
+			padding-bottom: 30px
+			vertical-align: top
+			font-size: 14px
+			color: #808080 
 	.gallery__counter-item
 		width: 200px
+		+rt
+			width: 100%
 		span
 			position: relative
 			display: block
 			margin-bottom: 7px
 			font-size: 66px
 			color: #7CCD2F
+			+rt
+				font-size: 46px
 			&:after
 				content: ""
 				position: absolute
@@ -206,12 +275,20 @@ body
 				height: 1px
 				margin-left: -50px
 				background: #000 
+				+rt
+					background: #7CCD2F 
 	.gallery__counter_users
 		left: 50%
 		margin-left: -480px
+		+rt
+			left: auto
+			margin: 0
 	.gallery__counter_deals
 		right: 50%
 		margin-right: -490px
+		+rt
+			right: auto
+			margin: 0
 	.gallery__pager
 		position: absolute
 		left: 50%
@@ -221,6 +298,8 @@ body
 		text-align: center
 		font-size: 0
 		z-index: 200 
+		+rt
+			display: none
 		button
 			width: 24px
 			height: 24px
@@ -239,10 +318,15 @@ body
 .download
 	padding: 55px 0 65px
 	text-align: center
+	+rt
+		padding: 20px 0 
 	.download__title
 		padding-top: 30px
 		font-size: 24px
 		color: #7CCD2F
+		+rt
+			padding-top: 10px
+			font-size: 16px
 	.download__logo
 		display: inline-block
 		height: 55px
@@ -251,6 +335,11 @@ body
 		font-size: 56px
 		color: #FFF 
 		vertical-align: middle
+		+rt
+			display: block
+			height: auto
+			margin: 0
+			font-size: 48px
 	&.download_white
 		.download__title
 			color: #FFF 
@@ -258,9 +347,14 @@ body
 .list
 	margin-bottom: 70px
 	overflow: hidden
+	+rt
+		margin: 0
+		padding: 0 10px
 	.list__in
 		margin-right: -40px
 		overflow: hidden
+		+rt
+			margin-right: -10px
 	.list__item
 		position: relative
 		float: left
@@ -268,6 +362,8 @@ body
 		height: 300px
 		margin: 0 30px 30px 0 
 		box-shadow: 0 3px 5px rgba(0,0,0,.6)
+		+rt
+			margin: 0 10px 10px 0
 		span
 			position: absolute
 			bottom: 20px

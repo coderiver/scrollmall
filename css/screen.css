@@ -23,12 +23,18 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 
 .wrapper.wrapper_inner { min-height: 100vh; background-image: url(../img/bg.jpg); background-size: cover; }
 
-.l-center { width: 960px; margin: 0 auto; }
+.l-center { max-width: 960px; margin: 0 auto; }
+@media only screen and (max-width: 980px) { .l-center { width: auto; } }
 
 .header { padding: 70px 0 50px; *zoom: 1; }
 .header:after { content: " "; display: table; clear: both; }
+@media only screen and (max-width: 980px) { .header { padding: 20px 10px; } }
+.header .download { display: none; padding: 0; margin-bottom: 20px; text-align: left; }
+@media only screen and (max-width: 980px) { .header .download { display: block; } }
 .header .header__logo { float: right; height: 55px; margin: 5px 15px 0 0; font-family: "Hammersmith One", Arial, sans-serif; font-size: 56px; color: white; }
-.header .appstore { float: right; }
+@media only screen and (max-width: 980px) { .header .header__logo { display: none; } }
+.header > .appstore { float: right; }
+@media only screen and (max-width: 980px) { .header > .appstore { display: none; } }
 
 .user { float: left; }
 .user .user__pic { float: left; margin-right: 15px; }
@@ -40,13 +46,21 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 .user .user__city a { color: #7ccd2f; text-decoration: none; }
 
 .main { background-image: url(../img/bg.jpg); background-size: cover; }
-.main .main__center { position: relative; width: 960px; height: 100vh; min-height: 940px; margin: 0 auto; text-align: center; font-size: 0; }
+.main .main__center { position: relative; max-width: 960px; height: 100vh; min-height: 940px; margin: 0 auto; text-align: center; font-size: 0; }
 .main .main__center:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
-.main .main__phone { display: inline-block; width: 942px; height: 623px; background: url(../img/main-phone.png); vertical-align: middle; }
+@media only screen and (max-width: 980px) { .main .main__center { width: auto; height: auto; min-height: 0; padding-bottom: 147px; text-align: center; } }
+.main .main__center > .appstore { position: absolute; right: 0; bottom: 200px; }
+@media only screen and (max-width: 980px) { .main .main__center > .appstore { display: none; } }
+.main .main__phone { position: absolute; top: 50%; margin-top: -312px; padding: 0 10px; vertical-align: middle; }
+@media only screen and (max-width: 980px) { .main .main__phone { position: relative; top: auto; margin: 0 0 20px; } }
+.main .main__phone img { max-width: 100%; }
 .main .main__head { position: absolute; top: 80px; left: 0; right: 0; text-align: left; }
+.main .main__head .appstore { display: none; margin-bottom: 20px; }
+@media only screen and (max-width: 980px) { .main .main__head .appstore { display: inline-block; } }
+@media only screen and (max-width: 980px) { .main .main__head { position: relative; top: auto; padding-top: 15px; text-align: center; } }
 .main .main__logo { font-family: "Hammersmith One", Arial, sans-serif; font-size: 92px; color: white; }
+@media only screen and (max-width: 980px) { .main .main__logo { font-size: 64px; } }
 .main .main__title-sub { margin-bottom: 20px; font-size: 16px; color: #7ccd2f; }
-.main .appstore { position: absolute; right: 0; bottom: 200px; }
 
 .social { font-size: 0; }
 .social a { display: inline-block; margin-right: 20px; vertical-align: top; }
@@ -56,29 +70,45 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 .appstore { display: inline-block; background: url('../img/icons-sb92f54e1b0.png') 0 0 no-repeat; width: 200px; height: 60px; vertical-align: middle; }
 
 .gallery { position: relative; height: 100vh; min-height: 940px; }
+@media only screen and (max-width: 980px) { .gallery { height: auto; min-height: 0; margin-top: -127px; font-size: 0; } }
 .gallery .gallery__green { position: absolute; left: 0; right: 0; bottom: 0; padding: 150px 0 310px; background: url(../img/gallery-bg.jpg); }
+@media only screen and (max-width: 980px) { .gallery .gallery__green { position: relative; bottom: auto; padding: 0; } }
 .gallery .gallery__list-item { width: 160px; height: 160px; border: 1px solid white; border-width: 1px 0 1px 1px; font-size: 0; }
 .gallery .gallery__phone { position: absolute; left: 50%; bottom: 75px; width: 400px; height: 798px; margin-left: -200px; background: url(../img/gallery-phone.png); font-size: 0; z-index: 200; }
+@media only screen and (max-width: 980px) { .gallery .gallery__phone { display: none; } }
 .gallery .gallery__phone-list { position: absolute; top: 116px; left: 42px; width: 317px; height: 565px; background: white; }
 .gallery .gallery__counter { position: absolute; top: 70px; font-size: 26px; color: #4a4a4a; text-transform: uppercase; text-align: center; z-index: 210; }
+@media only screen and (max-width: 980px) { .gallery .gallery__counter { position: relative; top: auto; display: inline-block; width: 50%; padding-bottom: 30px; vertical-align: top; font-size: 14px; color: gray; } }
 .gallery .gallery__counter-item { width: 200px; }
+@media only screen and (max-width: 980px) { .gallery .gallery__counter-item { width: 100%; } }
 .gallery .gallery__counter-item span { position: relative; display: block; margin-bottom: 7px; font-size: 66px; color: #7ccd2f; }
+@media only screen and (max-width: 980px) { .gallery .gallery__counter-item span { font-size: 46px; } }
 .gallery .gallery__counter-item span:after { content: ""; position: absolute; bottom: -1px; left: 50%; width: 100px; height: 1px; margin-left: -50px; background: black; }
+@media only screen and (max-width: 980px) { .gallery .gallery__counter-item span:after { background: #7ccd2f; } }
 .gallery .gallery__counter_users { left: 50%; margin-left: -480px; }
+@media only screen and (max-width: 980px) { .gallery .gallery__counter_users { left: auto; margin: 0; } }
 .gallery .gallery__counter_deals { right: 50%; margin-right: -490px; }
+@media only screen and (max-width: 980px) { .gallery .gallery__counter_deals { right: auto; margin: 0; } }
 .gallery .gallery__pager { position: absolute; left: 50%; bottom: 25px; width: 300px; margin-left: -150px; text-align: center; font-size: 0; z-index: 200; }
+@media only screen and (max-width: 980px) { .gallery .gallery__pager { display: none; } }
 .gallery .gallery__pager button { width: 24px; height: 24px; margin-left: 20px; border: 6px solid rgba(255, 255, 255, 0.5); border-radius: 50%; background: none; vertical-align: top; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
 .gallery .gallery__pager button:first-child { margin: 0; }
 .gallery .gallery__pager button.is-active { background: rgba(255, 255, 255, 0.5); border-color: transparent; }
 
 .download { padding: 55px 0 65px; text-align: center; }
+@media only screen and (max-width: 980px) { .download { padding: 20px 0; } }
 .download .download__title { padding-top: 30px; font-size: 24px; color: #7ccd2f; }
+@media only screen and (max-width: 980px) { .download .download__title { padding-top: 10px; font-size: 16px; } }
 .download .download__logo { display: inline-block; height: 55px; margin: 5px 15px 0 0; font-family: "Hammersmith One", Arial, sans-serif; font-size: 56px; color: white; vertical-align: middle; }
+@media only screen and (max-width: 980px) { .download .download__logo { display: block; height: auto; margin: 0; font-size: 48px; } }
 .download.download_white .download__title { color: white; }
 
 .list { margin-bottom: 70px; overflow: hidden; }
+@media only screen and (max-width: 980px) { .list { margin: 0; padding: 0 10px; } }
 .list .list__in { margin-right: -40px; overflow: hidden; }
+@media only screen and (max-width: 980px) { .list .list__in { margin-right: -10px; } }
 .list .list__item { position: relative; float: left; width: 300px; height: 300px; margin: 0 30px 30px 0; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); }
+@media only screen and (max-width: 980px) { .list .list__item { margin: 0 10px 10px 0; } }
 .list .list__item span { position: absolute; bottom: 20px; left: 20px; padding: 5px 10px; background: #7ccd2f; border-radius: 4px; border: 1px solid #6ab226; font-size: 16px; color: white; }
 
 .l { *zoom: 1; }
