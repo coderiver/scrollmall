@@ -19,6 +19,8 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
+@font-face { font-family: AvenirLT-Black; src: url("fonts/AvenirLT-Black.eot"); src: url("fonts/AvenirLT-Black.eot?#iefix") format("embedded-opentype"), url("fonts/AvenirLT-Black.woff") format("woff"), url("fonts/AvenirLT-Black.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
 body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1.2; }
 
 .wrapper.wrapper_inner { min-height: 100vh; background-image: url(../img/bg.jpg); background-size: cover; }
@@ -31,7 +33,7 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 @media only screen and (max-width: 980px) { .header { padding: 20px 10px; } }
 .header .download { display: none; padding: 0; margin-bottom: 20px; text-align: left; }
 @media only screen and (max-width: 980px) { .header .download { display: block; } }
-.header .header__logo { float: right; height: 55px; margin: 5px 15px 0 0; font-family: "Hammersmith One", Arial, sans-serif; font-size: 56px; color: white; }
+.header .header__logo { float: right; height: 55px; margin: 0 15px 0 0; font-family: "AvenirLT-Black", Arial, sans-serif; font-size: 56px; color: white; }
 @media only screen and (max-width: 980px) { .header .header__logo { display: none; } }
 .header > .appstore { float: right; }
 @media only screen and (max-width: 980px) { .header > .appstore { display: none; } }
@@ -58,7 +60,7 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 .main .main__head .appstore { display: none; margin-bottom: 20px; }
 @media only screen and (max-width: 980px) { .main .main__head .appstore { display: inline-block; } }
 @media only screen and (max-width: 980px) { .main .main__head { position: relative; top: auto; padding-top: 15px; text-align: center; } }
-.main .main__logo { font-family: "Hammersmith One", Arial, sans-serif; font-size: 92px; color: white; }
+.main .main__logo { font-family: "AvenirLT-Black", Arial, sans-serif; font-size: 92px; color: white; }
 @media only screen and (max-width: 980px) { .main .main__logo { font-size: 64px; } }
 .main .main__title-sub { margin-bottom: 20px; font-size: 16px; color: #7ccd2f; }
 
@@ -99,7 +101,7 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 @media only screen and (max-width: 980px) { .download { padding: 20px 0; } }
 .download .download__title { padding-top: 30px; font-size: 24px; color: #7ccd2f; }
 @media only screen and (max-width: 980px) { .download .download__title { padding-top: 10px; font-size: 16px; } }
-.download .download__logo { display: inline-block; height: 55px; margin: 5px 15px 0 0; font-family: "Hammersmith One", Arial, sans-serif; font-size: 56px; color: white; vertical-align: middle; }
+.download .download__logo { display: inline-block; height: 55px; margin: 0 15px 0 0; font-family: "AvenirLT-Black", Arial, sans-serif; font-size: 56px; color: white; vertical-align: middle; }
 @media only screen and (max-width: 980px) { .download .download__logo { display: block; height: auto; margin: 0; font-size: 48px; } }
 .download.download_white .download__title { color: white; }
 
@@ -110,6 +112,11 @@ body { font-family: "Ubuntu", Arial, sans-serif; font-size: 12px; line-height: 1
 .list .list__item { position: relative; float: left; width: 300px; height: 300px; margin: 0 30px 30px 0; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); }
 @media only screen and (max-width: 980px) { .list .list__item { margin: 0 10px 10px 0; } }
 .list .list__item span { position: absolute; bottom: 20px; left: 20px; padding: 5px 10px; background: #7ccd2f; border-radius: 4px; border: 1px solid #6ab226; font-size: 16px; color: white; }
+
+.photo { max-width: 640px; padding: 15px; background: white; vertical-align: top; }
+.photo .photo__pic img { display: block; max-width: 100%; }
+.photo .photo__description { padding: 20px 15px 10px; color: #39393a; font-size: 18px; }
+.photo .photo__description a { color: #2c72b0; text-decoration: none; }
 
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
